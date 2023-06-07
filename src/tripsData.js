@@ -1,6 +1,7 @@
 const tripsData = [
   {
     id: 1,
+
     name: "Petra Hike",
     city: "maan",
     slug: "petra-hike",
