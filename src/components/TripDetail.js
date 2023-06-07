@@ -4,9 +4,9 @@ import TripItem from "./TripItem";
 import { useParams, useNavigate, Navigate, Link } from "react-router-dom";
 function TripDetail() {
   // const trip = tripsData[0];
-  const { tripId } = useParams();
+  const { tripSlug } = useParams();
   // const navigate = useNavigate();
-  const getTrips = tripsData.find((trip) => tripId == trip.id);
+  const getTrips = tripsData.find((trip) => tripSlug == trip.slug);
   if (!getTrips) {
     return <Navigate to="/" replace={true}></Navigate>;
   }
@@ -16,8 +16,6 @@ function TripDetail() {
         <div className="modal-body text-center pb-5">
           <div className="container">
             <div className="row justify-content-center">
-              {/* <Link to={`/tripDetail/${getTrips.id}`}> */}
-              {/* <TripItem tripId={trip.id} /> */}
               <div className="col-lg-8">
                 <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">
                   {getTrips.name}
@@ -46,7 +44,6 @@ function TripDetail() {
                   Details : {getTrips.details}
                 </p>
               </div>
-              {/* </Link> */}
             </div>
           </div>
         </div>
